@@ -1,0 +1,95 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+body{
+	background-color: black;
+
+}
+
+#container{
+display: flex;	
+padding: 20px;
+background-color: black;
+display: inline-block;
+position: absolute;
+top:40%;
+left:30%;
+
+
+}
+
+#container2{
+background-color: black;
+display: flex;
+padding: 10px;
+
+}
+
+#hours{
+	flex:3;
+}
+/*#colon{
+	flex:1;
+	font-size: 30px;
+	color: white;*/
+	
+}
+#minutes{
+flex:3;
+}
+
+#container3{
+flex:1;
+background-color: black;
+padding: 5px;
+/*justify-content:space-between;*/
+}
+
+.radio{
+	flex:1;
+}
+#container4{
+display: flex;
+background-color: black;
+padding: 5px;
+justify-content: center;
+}
+
+input[name="alarmbox"]{
+color:grey;
+}
+
+.radio{
+color:white;
+width:50px;
+background-color: blue;
+display: inline-flex;
+}
+
+
+.clock{
+	padding: 15px;
+	color: white;
+	font-size: 40px;
+	border: 5px double grey;
+	padding: 10px;
+	box-shadow: 2px 2px 2px grey;
+	border-radius: 20%;
+	display: block;
+	background-color: blue;
+
+}
+.buttons{
+	padding:0 20px 0 20px;
+}
+
+p{
+	color:blue;
+	font-size: 16px;
+	border-color: grey;
+
+
+
+}
