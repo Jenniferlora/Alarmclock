@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Alarm Clock</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+
+<div id ="container">
+								<!-- CLOCK -->
+	<div id="display" class="clock"></div>
+	
+								<!-- ALARM -->
+	<div id="container2">
+		<div class="alarm" >
+			<input id="hours" type="text" name="alarmbox" placeholder="Hour" > 
+		</div>
+								<!-- COLON -->
+
+		<div class="alarm" id="colon"><p>:</p></div>
+								<!-- MINUTES -->
+		<div class="alarm" >
+			<input id="minutes" type="text" name="alarmbox" placeholder="Minutes">
+		</div>
+
+		
+	</div> 
+	
+							<!-- AM OR PM -->
+	<div id="container3">
+		
+		<div class="radio">
+			<div><input id="am" type="radio" value="AM"> AM </div>
+		</div>
+
+		<div class="radio">
+		<div><input id="pm" type="radio" value="PM"> PM </div>
+		</div>
+
+	</div>	
+	
+	<div id="container4">
+					<!-- SET ALARM -->
+		<div class="buttons">
+			<button id="set" type="text"> <p>Set Alarm</p> </button> 
+		</div>
+							<!-- RESET ALARM -->
+		<div class="buttons">
+			<button type="text"> <p>Reset</p> </button> 
+		</div>
+
+	</div>
+</div>
+
+
+	<script type="text/javascript">
+		function displaybox(){
+			var date = new Date(); //Assigns the current date to var date.
+			var h = date.getHours(); //military hours
+			var m = date.getMinutes();//minutes
+			var s = date.getSeconds(); //seconds
+			var session = "AM";
+
+			// convert from military time
+			if (h==0){
+				h=12;
+			} if (h=12){
+				session="PM";
+			}if(h>12){
+				h=h-12;
+				session ="PM";
+			}
+
+			// convert time to double digits
+			h=(h<10)? "0" + h : h;//condition , ? = check if tue, display : if not, display;
+
+			m=(m<10)? "0" + m : m;
+
+			s=(s<10)? "0" + s : s;
+
+			var time = h + ":" + m + ":" + s + " " + session;
+
+
+
+
+			document.getElementById("display").innerText = time; //doesn't work on firefox
+			document.getElementById("display").textContent = time; //doesn't work on ie
+
+			setTimeout(displaybox,1000); //running clock
+
+		
+		}
+		displaybox();
+
+		
+	</script>
+	<script>
+
+		var alarmminutes=document.getElementById("minutes").value;
+		var alarmhours=document.getElementById("hours").value;
+		var sessionselected=document.getElementById("am").checked;
+		var sessionselected=document.getElementById("pm").checked;
+
+		var date = new Date(); //Assigns the current date to var date.
+			var h = date.getHours(); //in military hours
+			var m = date.getMinutes();//minutes
+			var s = date.getSeconds(); //seconds
+			var session = "AM";
+
+		
+		document.getElementById("set").addEventListener("click",function ring() );
+
+		
+		//Checks to make sure alarm and time are equal to each other if it is, alert pops up.
+		
+		function ring(){
+		if(!(alarmminutes==m) && (alarmhours==h) && (sessionselected===session)) {
+			alert("Alarm Set!");
+		}else if((alarmminutes==m) && (alarmhours==h) && (sessionselected===session)){
+			alert("It's Time");
+		} 
+		
+		}
+function();
+	</script>
+</body>
+</html>
+
+
+
+
+
